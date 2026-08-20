@@ -1,27 +1,74 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+/* Fondo general con el degradado moderno */
+ion-content {
+  --background: linear-gradient(135deg, #1f4068 0%, #162447 50%, #e43f5a 100%);
+  --color: #ffffff;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+/* Estilo para la barra superior */
+ion-header ion-toolbar {
+  --background: #162447;
+  --color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+/* Contenedor principal que centra todo en el medio de la pantalla */
+.contenedor-centrado {
+  max-width: 450px;       /* Ancho máximo para que no se vea exageradamente ancho */
+  margin: 40px auto;      /* Centra horizontalmente y da espacio arriba/abajo */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#container a {
-  text-decoration: none;
+/* Tarjeta del formulario con efecto de transparencia (Glassmorphism) */
+ion-item {
+  --background: rgba(255, 255, 255, 0.1);
+  --color: #ffffff;
+  --highlight-color: #e43f5a;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  ion-label {
+    color: #e43f5a !important;
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+
+  ion-input {
+    color: #ffffff;
+  }
+}
+
+/* Botón llamativo con degradado y sombra */
+ion-button {
+  --background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  --border-radius: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 6px 20px rgba(255, 65, 108, 0.5);
+  margin-bottom: 30px;
+  height: 48px;
+}
+
+/* Contenedor de la lista transparente */
+ion-list {
+  background: transparent;
+  padding: 0;
+
+  /* Estilo individual para cada elemento de la lista (*ngFor) */
+  ion-item {
+    --background: rgba(255, 255, 255, 0.15);
+    margin-bottom: 10px;
+    border-left: 5px solid #ff416c; /* Línea de acento colorida a la izquierda */
+    
+    ion-label {
+      color: #ffffff !important;
+      font-size: 1.1rem;
+    }
+  }
 }
